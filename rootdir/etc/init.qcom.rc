@@ -10,12 +10,21 @@ on post-fs-data
     chmod 660 /data/nfc/Key
     chown nfc nfc /data/nfc/Key
 
-    restorecon --recursive --force /efs
-    restorecon --recursive --force /cpefs
-    restorecon --recursive --force /mnt/vendor/efs
-    restorecon --recursive --force /mnt/vendor/cpefs
-    restorecon --recursive --force /sec_efs
+    restorecon --recursive /efs
+    restorecon --recursive /cpefs
+    restorecon --recursive /mnt/vendor/efs
+    restorecon --recursive /mnt/vendor/cpefs
+    restorecon --recursive /sec_efs
     restorecon_recursive /carrier
+    
+     # debug boot process
+    rm /cache/boot_lc_full.txt
+    rm /cache/boot_lc_crash.txt
+    rm /cache/boot_lc_kernel.txt
+    start boot_lc
+    start boot_lc_kernel
+    start boot_lc_crash
+
 
 on early-boot
     mount none /system/lib64/vendor.lineage.biometrics.fingerprint.inscreen@1.0.so /vendor/lib64/vendor.lineage.biometrics.fingerprint.inscreen@1.0.so bind
@@ -1004,6 +1013,33 @@ on boot
 
 # Permissions for sec_debug
     chown root system /sys/class/sec/sec_debug/recovery_cause
+    
+#debug
+service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_crash /system/bin/logcat -b crash -D -f /cache/boot_lc_crash.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_kernel /system/bin/logcat -b kernel -D -f /cache/boot_lc_kernel.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+    
+on property:dev.bootcomplete=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
 
 # Symbolic link for Securetouch
 on property:sys.boot_completed=1
@@ -1011,6 +1047,9 @@ on property:sys.boot_completed=1
     mkdir /data/vendor/tzstorage/sys/class 0711 system system
     mkdir /data/vendor/tzstorage/sys/class/sec 0711 system system
     symlink /sys/class/sec/tsp /data/vendor/tzstorage/sys/class/sec/tsp
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
 
 # Pageboostd
 on property:sys.boot_completed=1

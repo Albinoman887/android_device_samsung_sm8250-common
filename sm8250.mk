@@ -38,7 +38,6 @@ PRODUCT_PACKAGES += \
 # Skip Mount
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/skip_mount.cfg:system/etc/init/config/skip_mount.cfg
-
 # HIDL
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/vendor_override_manifest.xml:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/vintf/manifest/vendor_override_manifest.xml
@@ -98,6 +97,11 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/etc/empty:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/vk_qsee.rc \
     $(COMMON_PATH)/etc/empty:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/wsm-service.rc \
     $(COMMON_PATH)/etc/excluded_hardware.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/excluded_hardware.xml
+
+#Vendor overlays    
+#PRODUCT_COPY_FILES += \
+#    $(COMMON_PATH)/vendor_overlay/build.prop:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/build.prop \
+#    $(COMMON_PATH)/vendor_overlay/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/fstab.qcom
 
 # Properties
 -include $(COMMON_PATH)/vendor_prop.mk

@@ -47,8 +47,7 @@ BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_DTB_OFFSET := 0x01F00000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --dtb_offset $(BOARD_DTB_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -67,8 +66,6 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system
 
 # File System
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -90,6 +87,10 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := 0
 # HASHTREE_DISABLED | VERIFICATION_DISABLED
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
@@ -117,24 +118,8 @@ TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # SELinux
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public \
-    device/samsung_slsi/sepolicy/common/public \
-    $(COMMON_PATH)/sepolicy/platform/public
+include device/qcom/sepolicy/SEPolicy.mk
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private \
-    device/samsung_slsi/sepolicy/common/private \
-    $(COMMON_PATH)/sepolicy/platform/private
-
-PRODUCT_PUBLIC_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/product/public \
-    $(COMMON_PATH)/sepolicy/public
-
-PRODUCT_PRIVATE_SEPOLICY_DIRS += \
-    device/qcom/sepolicy/product/private \
-    $(COMMON_PATH)/sepolicy/private
-
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
