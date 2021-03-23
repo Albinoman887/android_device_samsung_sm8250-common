@@ -29,8 +29,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     fstab.qcom
-    
-$(call find-copy-subdir-files,*,device/samsung/sm8250-common/prebuilt/product,product) 
 
 # Recovery
 PRODUCT_PACKAGES += \
