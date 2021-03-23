@@ -8,12 +8,15 @@ ro.bluetooth.a2dp_offload.supported=false
 persist.bluetooth.a2dp_offload.disabled=true
 vendor.audio.feature.a2dp_offload.enable=false
 
-dalvik.vm.heapstartsize=32m
+
+
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapgrowthlimit=512m
-dalvik.vm.heapsize=768m
-dalvik.vm.heaptargetutilization=0.5
-dalvik.vm.heapminfree=8m
-dalvik.vm.heapmaxfree=64m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapmaxfree=8m
 
 persist.device_config.runtime_native.usap_pool_enabled=true
 
