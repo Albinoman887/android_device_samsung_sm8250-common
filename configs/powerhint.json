@@ -281,15 +281,6 @@
             "ResetOnInit": true
         },
         {
-            "Name": "DoubleTapToWakeEnable",
-            "Path": "/sys/class/sec/tsp/cmd",
-            "Values": [
-                "aot_enable,0",
-                "aot_enable,1"
-            ],
-            "DefaultIndex": 0,
-        },
-        {
             "Name": "PowerHALMainState",
             "Path": "vendor.powerhal.state",
             "Values": [
@@ -316,17 +307,6 @@
             "Values": [
                 "EXPENSIVE_RENDERING",
                 ""
-            ],
-            "Type": "Property"
-        },
-        {
-            "Name": "PowerHALPerfProfileState",
-            "Path": "vendor.powerhal.perf_profile",
-            "Values": [
-                "POWER_SAVE",
-                "BIAS_POWER_SAVE",
-                "BIAS_PERFORMANCE",
-                "HIGH_PERFORMANCE"
             ],
             "Type": "Property"
         }
@@ -679,36 +659,6 @@
             "Node": "TouchscreenEnable",
             "Duration": 0,
             "Value": "0"
-        },
-        {
-            "PowerHint": "DOUBLE_TAP_TO_WAKE",
-            "Node": "DoubleTapToWakeEnable",
-            "Duration": 0,
-            "Value": "aot_enable,1"
-        },
-        {
-            "PowerHint": "PROFILE_POWER_SAVE",
-            "Node": "PowerHALPerfProfileState",
-            "Duration": 0,
-            "Value": "POWER_SAVE"
-        },
-        {
-            "PowerHint": "PROFILE_BIAS_POWER_SAVE",
-            "Node": "PowerHALPerfProfileState",
-            "Duration": 0,
-            "Value": "BIAS_POWER_SAVE"
-        },
-        {
-            "PowerHint": "PROFILE_BIAS_PERFORMANCE",
-            "Node": "PowerHALPerfProfileState",
-            "Duration": 0,
-            "Value": "BIAS_PERFORMANCE"
-        },
-        {
-            "PowerHint": "PROFILE_HIGH_PERFORMANCE",
-            "Node": "PowerHALPerfProfileState",
-            "Duration": 0,
-            "Value": "HIGH_PERFORMANCE"
         }
     ]
 }
