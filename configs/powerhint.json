@@ -281,15 +281,6 @@
             "ResetOnInit": true
         },
         {
-            "Name": "DoubleTapToWakeEnable",
-            "Path": "/sys/class/sec/tsp/cmd",
-            "Values": [
-                "aot_enable,0",
-                "aot_enable,1"
-            ],
-            "DefaultIndex": 0,
-        },
-        {
             "Name": "PowerHALMainState",
             "Path": "vendor.powerhal.state",
             "Values": [
@@ -668,12 +659,6 @@
             "Node": "TouchscreenEnable",
             "Duration": 0,
             "Value": "0"
-        },
-        {
-            "PowerHint": "DOUBLE_TAP_TO_WAKE",
-            "Node": "DoubleTapToWakeEnable",
-            "Duration": 0,
-            "Value": "aot_enable,1"
         }
     ]
 }
