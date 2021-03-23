@@ -50,6 +50,10 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.samsung-sm8250
+    
+#fstab
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/prebuilt/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/fstab.qcom
 
 # NFC
 PRODUCT_PACKAGES += \
