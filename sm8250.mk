@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/audio_policy_configuration.xml
+    
+#Doze
+PRODUCT_COPY_FILES += \
+    SamsungDoze
 
 # Fingerprint
 PRODUCT_PACKAGES += \
