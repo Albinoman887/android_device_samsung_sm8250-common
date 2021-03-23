@@ -46,6 +46,7 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/audio_policy_configuration.xml
+    
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -79,6 +80,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:system/etc/permissions/android.hardware.sensor.hifi_sensors.xml
+
+# Samsung App
+PRODUCT_PACKAGES += \
+    AdvancedDisplay \
+    SamsungDoze
 
 # Vendor Services - DISABLED
 PRODUCT_COPY_FILES += \
