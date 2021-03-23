@@ -281,6 +281,15 @@
             "ResetOnInit": true
         },
         {
+            "Name": "DoubleTapToWakeEnable",
+            "Path": "/sys/class/sec/tsp/cmd",
+            "Values": [
+                "aot_enable,0",
+                "aot_enable,1"
+            ],
+            "DefaultIndex": 0,
+        },
+        {
             "Name": "PowerHALMainState",
             "Path": "vendor.powerhal.state",
             "Values": [
@@ -307,6 +316,17 @@
             "Values": [
                 "EXPENSIVE_RENDERING",
                 ""
+            ],
+            "Type": "Property"
+        },
+        {
+            "Name": "PowerHALPerfProfileState",
+            "Path": "vendor.powerhal.perf_profile",
+            "Values": [
+                "POWER_SAVE",
+                "BIAS_POWER_SAVE",
+                "BIAS_PERFORMANCE",
+                "HIGH_PERFORMANCE"
             ],
             "Type": "Property"
         }
