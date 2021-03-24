@@ -18,13 +18,14 @@ on post-fs-data
     restorecon_recursive /carrier
     restorecon /sys/kernel/debug/tracing/trace_marker
 
+# on early-init
+# write /dev/watchdog "V"
+
 on early-boot
     mount none /system/lib64/vendor.lineage.biometrics.fingerprint.inscreen@1.0.so /vendor/lib64/vendor.lineage.biometrics.fingerprint.inscreen@1.0.so bind
     mount none /system/lib64/libperfmgr.so /vendor/lib64/libperfmgr.so bind
 
 on boot
-
-    write /dev/watchdog "V"
 
     # Permissions for System Server and daemons.
     chown system system /sys/power/autosleep
