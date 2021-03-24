@@ -82,9 +82,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.hifi_sensors.xml:system/etc/permissions/android.hardware.sensor.hifi_sensors.xml
 
 # Samsung App
-PRODUCT_PACKAGES += \
-    AdvancedDisplay \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay \
+#    SamsungDoze
 
 # Vendor Services - DISABLED
 PRODUCT_COPY_FILES += \
