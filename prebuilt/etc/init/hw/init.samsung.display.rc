@@ -152,6 +152,12 @@ on init
 	chown system system /dev/mafpc1
 	chmod 0660 /dev/mafpc1
 
+	chown system system /sys/class/lcd/panel/mafpc
+	chmod 0660 /sys/class/lcd/panel/mafpc
+
+	chown system system /sys/class/lcd/panel1/mafpc
+	chmod 0660 /sys/class/lcd/panel1/mafpc
+
 	chown system system /sys/class/lcd/panel/mafpc_check
 	chmod 0660 /sys/class/lcd/panel/mafpc_check
 
@@ -166,6 +172,9 @@ on init
 
 	chown system system /dev/poc
 	chmod 0660 /dev/poc
+
+	chown system system /dev/poc1
+	chmod 0660 /dev/poc1
 
 	chown system system /sys/class/lcd/panel/poc
 	chmod 0660 /sys/class/lcd/panel/poc
@@ -206,6 +215,13 @@ on init
 
 	chown system system /sys/class/lcd/panel1/mcd_mode
 	chmod 0660 /sys/class/lcd/panel1/mcd_mode
+
+# BRIGHTDOT
+	chown system system /sys/class/lcd/panel/brightdot
+	chmod 0660 /sys/class/lcd/panel/brightdot
+
+	chown system system /sys/class/lcd/panel1/brightdot
+	chmod 0660 /sys/class/lcd/panel1/brightdot
 
 # MCD_RESISTANCE
 	chown system system /sys/class/lcd/panel/mcd_resistance
@@ -263,6 +279,20 @@ on init
 	chown system system /sys/class/lcd/panel1/poc
 	chmod 0660 /sys/class/lcd/panel1/poc
 
+# POC
+	chown system system /sys/class/lcd/panel/fw_up
+	chmod 0660 /sys/class/lcd/panel/fw_up
+
+	chown system system /sys/class/lcd/panel1/fw_up
+	chmod 0660 /sys/class/lcd/panel1/fw_up
+
+# Firmware ID
+	chown system system /sys/class/lcd/panel/fw_id
+	chmod 0664 /sys/class/lcd/panel/fw_id
+
+	chown system system /sys/class/lcd/panel1/fw_id
+	chmod 0664 /sys/class/lcd/panel1/fw_id
+
 # POC_MCA
 	chown system system /sys/class/lcd/panel/poc_mca
 	chmod 0440 /sys/class/lcd/panel/poc_mca
@@ -276,7 +306,7 @@ on init
 
 	chown system system /sys/class/lcd/panel1/poc_info
 	chmod 0440 /sys/class/lcd/panel1/poc_info
-	
+
 # POC OFF
 	chown system system /sys/class/lcd/panel/poc_onoff
 	chmod 0660 /sys/class/lcd/panel/poc_onoff
@@ -402,7 +432,7 @@ on init
 	chown system system /sys/class/lcd/panel/actual_mask_brightness
 	chmod 0660 /sys/class/lcd/panel/actual_mask_brightness
 
-# UB CONN DET 
+# UB CONN DET
 	chown system system /sys/class/lcd/panel/conn_det
 	chmod 0660 /sys/class/lcd/panel/conn_det
 
@@ -446,8 +476,14 @@ on init
 	chown system system /sys/class/lcd/panel/motto/emphasis
 	chmod 0660 /sys/class/lcd/panel/motto/emphasis
 
-# ioctl_power_ctrl  
+# ioctl_power_ctrl
 	chown system system /sys/class/lcd/panel/ioctl_power_ctrl
 	chmod 0440 /sys/class/lcd/panel/ioctl_power_ctrl
 
+# tcon pre_emphasis
+	chown system system /sys/class/lcd/panel/tcon_pe
+	chmod 0660 /sys/class/lcd/panel/tcon_pe
 
+# debug information for dumpstate
+	chown system system /dev/sec_display_debug
+	chmod 0660 /dev/sec_display_debug
