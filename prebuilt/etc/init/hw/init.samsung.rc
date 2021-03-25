@@ -42,7 +42,7 @@ on init
 
     # Change backlog queue size
     write /proc/sys/net/core/netdev_max_backlog 100000
-
+	
 # Create carrier folder for HiddenMenu
 on post-fs
     mkdir /efs/carrier 0755 system system
@@ -101,6 +101,8 @@ on early-boot
     chown system system /dev/tspio
     chown system system /sys/class/sec/tsp/ear_detect_enable
     chown system system /sys/class/sec/tsp/hw_param
+    chown system system /sys/class/sec/tsp/dualscreen_policy
+    chown system system /sys/class/sec/tsp/virtual_prox
 
  # Permissions for Touchscreen-1
     chown system radio /sys/class/sec/tsp1/cmd
@@ -109,6 +111,7 @@ on early-boot
     chown system system /sys/class/sec/tsp1/sensitivity_mode
     chown system system /sys/class/sec/tsp1/prox_power_off
     chown system system /sys/class/sec/tsp1/hw_param
+    chown system system /sys/class/sec/tsp1/dualscreen_policy
 
  # Permissions for Touchscreen-2
     chown system radio /sys/class/sec/tsp2/cmd
@@ -117,6 +120,7 @@ on early-boot
     chown system system /sys/class/sec/tsp2/sensitivity_mode
     chown system system /sys/class/sec/tsp2/prox_power_off
     chown system system /sys/class/sec/tsp2/hw_param
+    chown system system /sys/class/sec/tsp2/dualscreen_policy
 
  # Permission for Securetouch
     chown system system /sys/class/sec/ss_touch/secure/secure_touch_enable
@@ -199,13 +203,18 @@ on boot
     mkdir /efs/FactoryApp/sensors/ 0775 root root
     chown system system /mnt/vendor/persist/sensors/registry/registry/sns_cm
 
+# Meta event
+    chown system radio /sys/class/sensors/sensor_dev/flush
+
 # Permissions for Power
     chown radio system /sys/power/cpufreq_max_limit
     chown radio system /sys/power/cpufreq_min_limit
     chown radio system /sys/power/cpufreq_table
+    chown radio system /sys/power/over_limit
     chmod 664 /sys/power/cpufreq_max_limit
     chmod 664 /sys/power/cpufreq_min_limit
     chmod 444 /sys/power/cpufreq_table
+    chmod 664 /sys/power/over_limit
     chown system system /sys/power/rtc_status
     chmod 444 /sys/power/rtc_status
     chown radio system /sys/power/volkey_wakeup
@@ -227,11 +236,17 @@ on boot
 
     # for eRR.p
     chown system system /proc/pwrsrc
-    chmod 0640 /proc/pwrsrc
+    chmod 0400 /proc/pwrsrc
 
     # Permissions for FMM
     chown system system /sys/class/sec/sec_debug/FMM_lock
     chmod 0660 /sys/class/sec/sec_debug/FMM_lock
+
+    # Permissions for recovery_cause
+    chown root system /sys/class/sec/sec_debug/recovery_cause
+
+# Video call Virtual Background
+    mkdir /data/vendor/segbackground 0771 system system
 
 service factory_ssc /vendor/bin/factory.ssc
     class core
