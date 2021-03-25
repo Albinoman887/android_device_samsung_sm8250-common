@@ -112,10 +112,9 @@ PRODUCT_COPY_FILES += \
 #init
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/prebuilt/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.sensors.sh \
-    $(COMMON_PATH)/prebuilt/bin/init/qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.post_boot.sh \
+    $(COMMON_PATH)/prebuilt/bin/init.qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.post_boot.sh \
     $(COMMON_PATH)/prebuilt/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.usb.sh \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.contexthub@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.contexthub@1.0-service.rc \
-    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.keymaster@4.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.keymaster@4.0-service.rc\ \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.bluetooth@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.bluetooth@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.wifi@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.wifi@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.memtrack@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.memtrack@1.0-service.rc \
