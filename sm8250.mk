@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.contexthub@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.contexthub@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.keymaster@4.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.keymaster@4.0-service.rc\ \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.bluetooth@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.bluetooth@1.0-service.rc \
-    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.wifi@1.0-service.rc$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.wifi@1.0-service.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.wifi@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.wifi@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.memtrack@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.memtrack@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.usb@1.1-service.wahoo.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.usb@1.1-service.wahoo.rc \
     $(COMMON_PATH)/prebuilt/etc/init/hw/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.qcom.rc \
