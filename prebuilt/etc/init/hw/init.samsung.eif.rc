@@ -37,6 +37,8 @@ on init
     chmod 0444 /sys/class/sec/ccic/vsafe0v_status
     chown system radio /sys/class/sec/ccic/ovp_ic_shutdown
     chmod 0220 /sys/class/sec/ccic/ovp_ic_shutdown
+    chown system system /sys/class/sec/ccic/hmd_power
+    chmod 0220 /sys/class/sec/ccic/hmd_power
 
 on boot
 
