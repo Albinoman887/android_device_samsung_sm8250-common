@@ -18,8 +18,8 @@ on post-fs-data
     restorecon_recursive /carrier
     restorecon /sys/kernel/debug/tracing/trace_marker
 
-# on early-init
-# write /dev/watchdog "V"
+on early-init
+write /dev/watchdog "V"
 
 on early-boot
     mount none /system/lib64/vendor.lineage.biometrics.fingerprint.inscreen@1.0.so /vendor/lib64/vendor.lineage.biometrics.fingerprint.inscreen@1.0.so bind
