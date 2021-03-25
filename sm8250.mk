@@ -108,6 +108,25 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/etc/empty:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/vk_qsee.rc \
     $(COMMON_PATH)/etc/empty:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/wsm-service.rc \
     $(COMMON_PATH)/etc/excluded_hardware.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/excluded_hardware.xml
+    
+#init
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/prebuilt/bin/init.qcom.sensors.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.sensors.sh \
+    $(COMMON_PATH)/prebuilt/bin/init/qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.post_boot.sh \
+    $(COMMON_PATH)/prebuilt/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/bin/init.qcom.usb.sh \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.contexthub@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.contexthub@1.0-service.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.keymaster@4.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.keymaster@4.0-service.rc\ \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.bluetooth@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.bluetooth@1.0-service.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.wifi@1.0-service.rc$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.wifi@1.0-service.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.memtrack@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.memtrack@1.0-service.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.usb@1.1-service.wahoo.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.usb@1.1-service.wahoo.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/hw/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.qcom.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/hw/init.samsung.display.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.samsung.display.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/hw/init.target.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.target.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/hw/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.samsung.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/hw/init.samsung.bsp.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.samsung.bsp.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/hw/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.qcom.usb.rc \
+    $(COMMON_PATH)/prebuilt/etc/init/android.hardware.configstore@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.configstore@1.1-service.rc
 
 # Properties
 -include $(COMMON_PATH)/vendor_prop.mk
