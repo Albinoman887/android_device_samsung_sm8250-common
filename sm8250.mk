@@ -9,7 +9,9 @@ TARGET_COPY_OUT_VENDOR_OVERLAY ?= $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PL
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    hardware/google/pixel \
+    hardware/samsung/hidl/power-libperfmgr
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -119,7 +121,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.wifi@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.wifi@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.memtrack@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.memtrack@1.0-service.rc \
     $(COMMON_PATH)/prebuilt/etc/init/android.hardware.usb@1.1-service.wahoo.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/android.hardware.usb@1.1-service.wahoo.rc \
-    $(COMMON_PATH)/prebuilt/etc/init/hw/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.qcom.rc \
     $(COMMON_PATH)/prebuilt/etc/init/hw/init.samsung.display.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.samsung.display.rc \
     $(COMMON_PATH)/prebuilt/etc/init/hw/init.target.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.target.rc \
     $(COMMON_PATH)/prebuilt/etc/init/hw/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR_OVERLAY)/etc/init/hw/init.samsung.rc \

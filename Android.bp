@@ -1,2 +1,6 @@
 soong_namespace {
+    imports: [
+        "hardware/samsung/hidl/power-libperfmgr",
+        "hardware/google/pixel"
+    ],
 }
