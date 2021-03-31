@@ -10,6 +10,8 @@ on post-fs-data
     chmod 660 /data/nfc/Key
     chown nfc nfc /data/nfc/Key
 
+    chmod 0444 /sys/fs/selinux/policy
+
     restorecon_recursive /efs
     restorecon_recursive /cpefs
     restorecon_recursive /mnt/vendor/efs
